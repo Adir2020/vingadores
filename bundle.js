@@ -52,15 +52,15 @@ var Vingador = /*#__PURE__*/function (_Pessoa) {
   _createClass(Vingador, [{
     key: "lutar",
     value: function lutar() {
-      alert("".concat(this.nome, " est\xE1 lutando usando ").concat(this.poderes[1]));
+      alert("".concat(this.nome, " est\xE1 lutando usando ").concat(this.poderes[0]));
     }
   }]);
 
   return Vingador;
 }(Pessoa);
 
-var thor = new Vingador("Thor", "1.85", "100kg", ["Deus do Trovão", "Super força", "Vôo", "Longevidade"], true, true, false);
+var visão = new Vingador("visão", "1.80", "80kg", ["Rajadas de energia", "Super força", "Vôo", "manipulação holografica"], true, false, false);
 
 document.getElementById("lutar").onclick = function () {
-  thor.lutar();
+  visão.lutar();
 };
