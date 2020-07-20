@@ -1,9 +1,45 @@
-const arr = [1, 2, 3, 4, 5, 6];
+class Pessoa {
+    constructor(nome, altura, peso) {
+        this.nome = nome;
+        this.altura = altura;
+        this.peso = peso;
+    }
+}
 
-const squareArr = arr.map((item) => item * item);
+class Vingador extends Pessoa {
+    constructor(
+        nome,
+        altura,
+        peso,
+        poderes,
+        temArmadura,
+        temArma,
+        isMembroFundador,
+        isImortal
+    ) {
+        super(nome, altura, peso);
+        this.poderes = poderes;
+        this.temArmadura = temArmadura;
+        this.temArma = temArma;
+        this.isMembroFundador = isMembroFundador;
+        this.isImortal = isImortal;
+    }
 
-const sum = arr.reduce((total, next) => total + next);
+    lutar() {
+        alert(`${this.nome} está lutando usando ${this.poderes[1]}`);
+    }
+}
 
+const thor = new Vingador(
+    "Thor",
+    "1.85",
+    "100kg",
+    ["Deus do Trovão", "Super força", "Vôo", "Longevidade"],
+    true,
+    true,
+    false
+);
 
-console.log(sum);
-
+document.getElementById("lutar").onclick = function () {
+    thor.lutar();
+};
